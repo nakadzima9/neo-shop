@@ -2,6 +2,7 @@
 
 ### Postman collections soon
 
-### Deploy to heroku soon
+### Heroku
+**[Link](https://neo-shop.herokuapp.com/)**
 
 ### Docker image soon
