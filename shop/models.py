@@ -50,7 +50,7 @@ class Product(models.Model):
     creation_date = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='products/%y/%m/%d/', blank=True, verbose_name='Изображение')
     price = models.DecimalField(max_digits=9, decimal_places=2, verbose_name='Цена')
-    discount = models.DecimalField(max_digits=9, decimal_places=2, verbose_name='Скидка')
+    discount = models.DecimalField(max_digits=9, decimal_places=2, verbose_name='Скидка', blank=True)
     supplier = models.ForeignKey(CustomUser, on_delete=models.CASCADE, verbose_name='Админ')
 
     class Meta:
