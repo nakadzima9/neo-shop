@@ -56,7 +56,7 @@ class CartView(generics.ListCreateAPIView):
     permission_classes = [IsAuthenticatedOrReadOnly]
 
     def get_queryset(self):
-        return Cart.objects.filter(is_order=False, user=self.request.user)
+        return Cart.objects.filter(is_order=False, user=self.request.user.id)
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
