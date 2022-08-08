@@ -1,11 +1,22 @@
 from rest_framework import generics
 from rest_framework.generics import CreateAPIView
-from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly, IsAuthenticated
+from rest_framework.permissions import (
+    AllowAny,
+    IsAuthenticatedOrReadOnly,
+    IsAuthenticated,
+)
 from rest_framework.response import Response
 
 from .permissions import IsOwner
-from .serializers import UserRegisterSerializer, CategorySerializer, CartSerializer, CartItemSerializer, CommentSerializer, \
-    ProductSerializer, OrderSerializer
+from .serializers import (
+    UserRegisterSerializer,
+    CategorySerializer,
+    CartSerializer,
+    CartItemSerializer,
+    CommentSerializer,
+    ProductSerializer,
+    OrderSerializer,
+)
 from .models import CustomUser, Category, Cart, CartItem, Comment, Product, Order
 
 
@@ -90,7 +101,7 @@ class OrderView(generics.ListCreateAPIView):
     def post(self, request, *args, **kwargs):
         serializer = OrderSerializer(data=request.data)
         if serializer.is_valid():
-            cart = serializer.validated_data['cart']
+            cart = serializer.validated_data["cart"]
             cart.is_order = True
             cart.save()
             serializer.save(user=self.request.user)

@@ -32,7 +32,6 @@ def create(self, validated_data):
 
 
 class CategorySerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Category
         fields = "__all__"
@@ -41,7 +40,7 @@ class CategorySerializer(serializers.ModelSerializer):
 class CartItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = CartItem
-        fields = '__all__'
+        fields = "__all__"
 
 
 class CartSerializer(serializers.ModelSerializer):
@@ -58,7 +57,9 @@ class CartSerializer(serializers.ModelSerializer):
 
         for item in cart_items:
             if item.product.discount > 0:
-                total_price += item.cart_item_price - item.cart_item_price * item.product.discount
+                total_price += (
+                    item.cart_item_price - item.cart_item_price * item.product.discount
+                )
             else:
                 total_price += item.cart_item_price
         return total_price
@@ -78,7 +79,9 @@ class OrderSerializer(serializers.ModelSerializer):
 
         for item in cart_items:
             if item.product.discount > 0:
-                total_price += item.cart_item_price - item.cart_item_price * item.product.discount
+                total_price += (
+                    item.cart_item_price - item.cart_item_price * item.product.discount
+                )
             else:
                 total_price += item.cart_item_price
         return total_price
