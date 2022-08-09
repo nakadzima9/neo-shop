@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  neoshop_db:
+    container_name: neoshop_db
+    image: postgres:13.0
+    env_file:
+      - .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  neoshop:
+    container_name: neoshop
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    depends_on:
+      - neoshop_db
+volumes:
+  postgres_data:
