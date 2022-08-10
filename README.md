@@ -2,13 +2,14 @@
 
 ### Simple online store for Neobis using Python, Django and Django Rest Framework
 
-## How to install
+## How to install 📢
 ____
-### Installation on UNIX-MacOS
-- __Clone git repository__
+### Installation ⚙️
+__Clone git repository__
 ```
 git clone https://github.com/nakadzima9/neo-shop.git
 ```
+**If you have a Unix/macOS system 🐧**
 - __Create virtual environment__
 ```
 python3 -m venv env
@@ -17,12 +18,7 @@ python3 -m venv env
 ```
 source env/bin/activate
 ```
-
-### Installation on Windows
-- __Clone git repository__
-```
-git clone https://github.com/nakadzima9/neo-shop.git
-```
+**If you have a Windows system 🪟**
 - __Create virtual environment__
 ```
 py -m venv env
@@ -31,18 +27,18 @@ py -m venv env
 ```
 .\env\Scripts\activate
 ```
-- __Installation dependencies__
+__Installation dependencies__
 ```
 pip install -r requirements.txt
 ```
 
-- __Database setup__
+__Database setup__
 ```
 python manage.py makemigrations
 python manage.py migrate 
-``` 
+```
 
-## Docker
+## Docker 🐋 
 ```
 docker-compose build
 docker-compose run
