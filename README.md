@@ -42,7 +42,7 @@ python manage.py makemigrations
 python manage.py migrate 
 ``` 
 
-### Docker
+## Docker
 ```
 docker-compose build
 docker-compose run
