@@ -31,12 +31,12 @@ py -m venv env
 ```
 .\env\Scripts\activate
 ```
-### Installation dependencies
+- __Installation dependencies__
 ```
 pip install -r requirements.txt
 ```
 
-### Database setup
+- __Database setup__
 ```
 python manage.py makemigrations
 python manage.py migrate 
